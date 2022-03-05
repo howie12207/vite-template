@@ -1,0 +1,63 @@
+{
+    "name": "vite-template",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview",
+        "format": "prettier .  --write",
+        "prepare": "husky install",
+        "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
+        "lint:style": "stylelint \"**/*.{css,scss,sass,vue}\" --ignore-path .gitignore",
+        "lint:prettier": "prettier --check .",
+        "lint": "npm run lint:js && npm run lint:style && npm run lint:prettier",
+        "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix && npm run lint:style -- --fix",
+        "postbuild": "react-snap"
+    },
+    "reactSnap": {
+        "source": "dist",
+        "minifyHtml": {
+            "collapseWhitespace": false,
+            "removeComments": true
+        }
+    },
+    "lint-staged": {
+        "*.{js,vue}": "eslint",
+        "*.{css,scss,sass,vue}": "stylelint",
+        "*.{css,scss,sass,vue,js}": "prettier --check --ignore-unknown"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.36",
+        "@fortawesome/free-solid-svg-icons": "^5.15.4",
+        "@fortawesome/vue-fontawesome": "^3.0.0-5",
+        "axios": "^0.21.4",
+        "element-plus": "^2.0.2",
+        "postcss-html": "^1.3.0",
+        "vue": "^3.2.6",
+        "vue-meta": "^3.0.0-alpha.9",
+        "vue-router": "^4.0.3",
+        "vuex": "^4.0.2"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^13.1.0",
+        "@commitlint/config-conventional": "^13.1.0",
+        "@vitejs/plugin-vue": "^2.2.4",
+        "@vue/compiler-sfc": "^3.2.6",
+        "autoprefixer": "^10.3.4",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-vue": "^8.3.0",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.1.2",
+        "postcss": "^8.3.6",
+        "prettier": "2.4.0",
+        "react-snap": "^1.23.0",
+        "sass": "^1.39.2",
+        "stylelint": "^14.2.0",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-recommended-vue": "^1.1.0",
+        "stylelint-config-standard-scss": "^3.0.0",
+        "tailwindcss": "^3.0.23",
+        "vite": "^2.8.6"
+    }
+}

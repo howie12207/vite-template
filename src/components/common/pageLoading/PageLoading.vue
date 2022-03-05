@@ -1,0 +1,33 @@
+<template>
+    <div class="loading"><img src="./img/loading.png" /></div>
+</template>
+<style lang="scss" scoped>
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0 0 0 / 80%);
+    text-align: center;
+    line-height: 100vh;
+    vertical-align: middle;
+
+    img {
+        display: inline-block;
+        animation: turn 1s ease infinite;
+        width: 80px;
+        height: 80px;
+    }
+}
+@keyframes turn {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+</style>
