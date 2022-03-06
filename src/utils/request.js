@@ -1,7 +1,10 @@
 import axios from 'axios';
 import { ElMessage } from 'element-plus';
-import store from '@/store';
-import router from '@/router';
+import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
+
+const router = useRouter();
+const store = useStore();
 
 const service = axios.create({
     baseURL: import.meta.env.VITE_API_BASE || '/',

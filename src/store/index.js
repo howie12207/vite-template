@@ -1,17 +1,20 @@
-import { createStore } from 'vuex';
+import { createStore as _createStore } from 'vuex';
 import user from './user';
 
-export default createStore({
-    strict: process.env.NODE_ENV === 'development',
-    state: {
-        pageLoading: false
-    },
-    mutations: {
-        SET_PAGE_LOADING(state, status) {
-            state.pageLoading = status;
+export function createStore() {
+    return _createStore({
+        strict: process.env.NODE_ENV === 'development',
+        state: {
+            pageLoading: false,
+            test: '77test'
+        },
+        mutations: {
+            SET_PAGE_LOADING(state, status) {
+                state.pageLoading = status;
+            }
+        },
+        modules: {
+            user
         }
-    },
-    modules: {
-        user
-    }
-});
+    });
+}

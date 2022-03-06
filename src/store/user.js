@@ -1,6 +1,6 @@
 import req from '@/utils/request';
 
-const sessionToken = sessionStorage.getItem('token');
+const sessionToken = import.meta.env.SSR ? undefined : sessionStorage.getItem('token');
 
 const state = {
     isLogin: !!sessionToken,
@@ -11,12 +11,12 @@ const mutations = {
     SET_TOKEN(state, token) {
         state.isLogin = true;
         state.token = token;
-        sessionStorage.setItem('token', token);
+        sessionStorage?.setItem('token', token);
     },
     REMOVE_TOKEN() {
         state.isLogin = false;
         state.token = null;
-        sessionStorage.removeItem('token');
+        sessionStorage?.removeItem('token');
     }
 };
 

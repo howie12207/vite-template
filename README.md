@@ -1,5 +1,11 @@
 # Vite Template
 
+## Notice
+
+### This branch is for can't install react-snap and need ssg
+
+### This can't use vue-meta to control meta
+
 ## Composition
 
 -   Vite
